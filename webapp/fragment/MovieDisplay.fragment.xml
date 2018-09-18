@@ -41,24 +41,24 @@
 								<Text text="{Name}" id="nameText"  />
 							</f:fields>
 						</f:FormElement>
-						<f:FormElement label="ISBN">
+						<f:FormElement label="Country">
 							<f:fields>
-								<Text text="{ISBN}" />
+								<Text text="{Country}" />
 							</f:fields>
 						</f:FormElement>
-						<f:FormElement label="Ebook">
+						<f:FormElement label="Link">
 							<f:fields>
-								<Link text="{Ebook}" press="downloadEbook"/>
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Donor">
-							<f:fields>
-								<Text text="{Donor}" />
+								<Link text="{Link}" press="downloadMovie"/>
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Category">
 							<f:fields>
-								<Text text="{Category}" id="countryText" />
+								<Text text="{Category}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Genre">
+							<f:fields>
+								<Text text="{Genre}" />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="PubDate">
@@ -66,24 +66,9 @@
 								<Text text="{PubDate}" />
 							</f:fields>
 						</f:FormElement>
-						<f:FormElement label="PurchasingTime">
-							<f:fields>
-								<Text text="{PurchasingTime}" />
-							</f:fields>
-						</f:FormElement>
 						<f:FormElement label="Description">
 							<f:fields>
 								<Text text="{Description}" />
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Borrower">
-							<f:fields>
-								<Text text="{Borrower}" />
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="BorrowerTime">
-							<f:fields>
-								<Text text="{BorrowerTime}" />
 							</f:fields>
 						</f:FormElement>
 					</f:formElements>

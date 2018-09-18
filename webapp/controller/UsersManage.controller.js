@@ -16,7 +16,7 @@ sap.ui.define([
 			this.getView().setModel(oModel);
 		},
 
-		back: function(){
+		back : function(){
 			var oHistory, sPreviousHash;
 
 			oHistory = History.getInstance();
@@ -65,14 +65,32 @@ sap.ui.define([
 			if (aContexts && aContexts.length > 0) {
 				var sText = aContexts.length + " selected";
 				oInfoToolbar.setVisible(true);
-				oEditBtn.setEnabled(true);
 				oDeleteBtn.setEnabled(true);
+				if (aContexts.length == 1) {
+					oEditBtn.setEnabled(true);
+				} else {
+					oEditBtn.setEnabled(false);
+				}
 			} else {
 				oInfoToolbar.setVisible(false);
 				oEditBtn.setEnabled(false);
 				oDeleteBtn.setEnabled(false);
 			}
 			oLabel.setText(sText);
+		},
+
+		handleAddPress : function () {
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("UserDetail", {});
+		},
+
+		handleEditPress : function () {
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("UserDetail", {});
+		},
+
+		handleDeletePress : function () {
+
 		}
 	});
 

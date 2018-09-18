@@ -1,6 +1,6 @@
 <mvc:View
 	height="100%"
-	controllerName="sap.ui.demo.walkthrough.controller.MovieDetail"
+	controllerName="sap.ui.demo.walkthrough.controller.UserDetail"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	xmlns:u="sap.ui.unified">
@@ -19,17 +19,15 @@
 		<Page
 			id="page"
 			showHeader="true"
-			title="Movie Detail"
+			title="Add a new user"
 			showNavButton="true"
 			navButtonPress="back"
 			enableScrolling="true" >
 			<footer>
 				<Bar>
 					<contentRight>
-						<Button id="edit" text="Edit" enabled="false" press="handleEditPress" />
 						<Button id="save" text="Save" type="Emphasized" visible="false" press="handleSavePress" />
 						<Button id="cancel" text="Cancel" visible="false" press="handleCancelPress" />
-						<Button id="delete" text="Delete" type="Reject" visible="false" press="handleDeletePress" />
 					</contentRight>
 				</Bar>
 			</footer>

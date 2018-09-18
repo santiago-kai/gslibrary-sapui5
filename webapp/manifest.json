@@ -74,6 +74,11 @@
                     "target":"UsersManage"
                 },
                 {
+                    "pattern":"UserDetail",
+                    "name":"UserDetail",
+                    "target":"UserDetail"
+                },
+                {
                     "pattern":"BooksReturn",
                     "name":"BooksReturn",
                     "target":"BooksReturn"
@@ -107,6 +112,11 @@
                     "pattern":"MovieDetail",
                     "name":"MovieDetail",
                     "target":"MovieDetail"
+                },
+                {
+                    "pattern":"MovieAdd",
+                    "name":"MovieAdd",
+                    "target":"MovieAdd"
                 }
             ],
             "targets":{
@@ -121,6 +131,10 @@
                 "UsersManage":{
                     "viewID":"UsersManage",
                     "viewName":"UsersManage"
+                },
+                "UserDetail":{
+                    "viewID":"UserDetail",
+                    "viewName":"UserDetail"
                 },
                 "BooksReturn":{
                     "viewId":"BooksReturn",
@@ -149,6 +163,10 @@
                 "MovieDetail":{
                     "viewId":"MovieDetail",
                     "viewName":"MovieDetail"
+                },
+                "MovieAdd":{
+                    "viewId":"MovieAdd",
+                    "viewName":"MovieAdd"
                 }
             }
         }

@@ -1,0 +1,62 @@
+{
+  "MoviesCollection":{
+    "MoviesListCollection":[
+      {
+        "MovieId": "1",
+        "MoviePicUrl": "res/filmposter.jpg",
+        "Name": "Ocean's Eight",
+        "Category": "Movie",
+        "Genre": "Comedy | Crime",
+        "PubDate": "2018-01"
+      },
+      {
+        "MovieId": "2",
+        "MoviePicUrl": "res/filmposter.jpg",
+        "Name": "Game of Thrones",
+        "Category": "TV Series",
+        "Genre": "Adventure | Fantasy",
+        "PubDate": "2011-07"
+      }
+    ],
+    "MovieGenreCollection":[
+      {
+        "GenreId": "",
+        "Name": "ALL"
+      },
+      {
+        "GenreId": "Comedy",
+        "Name": "Comedy"
+      },
+      {
+        "GenreId": "Crime",
+        "Name": "Crime"
+      },
+      {
+        "GenreId": "Adventure",
+        "Name": "Adventure"
+      },
+      {
+        "GenreId": "Fantasy",
+        "Name": "Fantasy"
+      }
+    ],
+    "CategoryCollection":[
+      {
+        "CategoryId": "",
+        "Name": "ALL"
+      },
+      {
+        "CategoryId": "Movie",
+        "Name": "Movie"
+      },
+      {
+        "CategoryId": "TV Series",
+        "Name": "TV Series"
+      }
+    ],
+    "Filter" : {
+      "text": "Filtered by: nothing"
+    }
+  }
+
+}

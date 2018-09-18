@@ -8,21 +8,15 @@ sap.ui.define([
 	], function(jQuery, Fragment, Controller, JSONModel, UIComponent, History) {
 	"use strict";
 
-	var PageController = Controller.extend("sap.ui.demo.walkthrough.controller.MovieDetail", {
+	var PageController = Controller.extend("sap.ui.demo.walkthrough.controller.MovieAdd", {
 
 		onInit: function (oEvent) {
 
-			// set explored app's demo model on this sample
-			var oModel = new JSONModel(jQuery.sap.getModulePath("sap.ui.demo.walkthrough.json", "/MovieDetail.json"));
-			oModel.attachRequestCompleted(function() {
-				this.byId('edit').setEnabled(true);
-			}.bind(this));
-			this.getView().setModel(oModel);
-
-			this.getView().bindElement("/Movie/0");
-
 			// Set the initial form to be the display one
-			this._showFormFragment("MovieDisplay");
+			this._showFormFragment("MovieChange");
+
+			// Set footer button
+			this._toggleButtonsAndView(true);
 		},
 
 		back: function(){
@@ -50,30 +44,17 @@ sap.ui.define([
 			}
 		},
 
-		handleEditPress : function () {
-
-			//Clone the data
-			this._oSupplier = jQuery.extend({}, this.getView().getModel().getData().Movie[0]);
-			this._toggleButtonsAndView(true);
-
-		},
-
 		handleCancelPress : function () {
-
-			//Restore the data
-			var oModel = this.getView().getModel();
-			var oData = oModel.getData();
-
-			oData.Movie[0] = this._oSupplier;
-
-			oModel.setData(oData);
-			this._toggleButtonsAndView(false);
-
+			this.back();
 		},
 
 		handleSavePress : function () {
 
-			this._toggleButtonsAndView(false);
+			// To do Save
+
+			// MessageBox
+
+			this.back();
 
 		},
 
@@ -83,10 +64,8 @@ sap.ui.define([
 			var oView = this.getView();
 
 			// Show the appropriate action buttons
-			oView.byId("edit").setVisible(!bEdit);
 			oView.byId("save").setVisible(bEdit);
 			oView.byId("cancel").setVisible(bEdit);
-			oView.byId("delete").setVisible(bEdit);
 
 			// Set the right form type
 			this._showFormFragment(bEdit ? "MovieChange" : "MovieDisplay");

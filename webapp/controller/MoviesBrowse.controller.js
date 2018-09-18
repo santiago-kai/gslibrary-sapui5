@@ -15,7 +15,7 @@ sap.ui.define([
 			var oPage = this.getView();
 			// oPage.setBusy(true);
 			this.oModel = new JSONModel();
-			this.oModel.loadData(jQuery.sap.getModulePath("sap.ui.demo.walkthrough.json", "/BookList.json"), null, false);
+			this.oModel.loadData(jQuery.sap.getModulePath("sap.ui.demo.walkthrough.json", "/MovieList.json"), null, false);
 			// this.oModel.attachRequestCompleted(function() {
 			// 	oPage.setBusy(false);
 			// });
@@ -26,8 +26,8 @@ sap.ui.define([
 			// });
 			this.getView().setModel(this.oModel);
 
-			this.aKeys = ["Status", "Category"];
-			this.oSelectStatus = this.getView().byId("slStatus");
+			this.aKeys = ["Genre", "Category"];
+			this.oSelectStatus = this.getView().byId("slGenre");
 			this.oSelectCategory = this.getView().byId("slCategory");
 		},
 
@@ -48,6 +48,11 @@ sap.ui.define([
 		onMovieDetail: function (evt) {
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.navTo("MovieDetail", {});
+		},
+
+		onAddMovie: function (evt) {
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.navTo("MovieAdd", {});
 		},
 
 /********************** Filter selection bar *************************/

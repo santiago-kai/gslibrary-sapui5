@@ -34,14 +34,14 @@
 					<f:content>
 						<fb:FilterBar reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false">
 							<fb:filterItems>
-								<fb:FilterItem name="A" label="Status">
+								<fb:FilterItem name="A" label="Genre">
 									<fb:control>
 										<Select
-										id="slStatus"
+										id="slGenre"
 										forceSelection="true"
 										change="onSelectChange"
-										items="{path: '/BooksCollection/BookStatusCollection'}">
-										<core:Item key="{StatusId}" text="{Name}"/>
+										items="{path: '/MoviesCollection/MovieGenreCollection'}">
+										<core:Item key="{GenreId}" text="{Name}"/>
 										</Select>
 									</fb:control>
 								</fb:FilterItem>
@@ -51,7 +51,7 @@
 										id="slCategory"
 										change="onSelectChange"
 										forceSelection="true"
-										items="{path: '/BooksCollection/CategoryCollection'}">
+										items="{path: '/MoviesCollection/CategoryCollection'}">
 										<core:Item key="{CategoryId}" text="{Name}"/>
 										</Select>
 									</fb:control>
@@ -76,7 +76,7 @@
 				<Table
 						id="idMoviesTable"
 						inset="false"
-						items="{path: '/BooksCollection/BooksListCollection'}">
+						items="{path: '/MoviesCollection/MoviesListCollection'}">
 
 					<columns>
 						<Column
@@ -97,7 +97,7 @@
 						<Column
 								minScreenWidth="Tablet"
 								demandPopin="true">
-							<Text text="Status"/>
+							<Text text="Genre"/>
 						</Column>
 						<Column
 								minScreenWidth="Tablet"
@@ -113,15 +113,10 @@
 								type="Navigation"
 								vAlign="Middle">
 							<cells>
-								<StandardListItem icon="{BookPicUrl}"/>
+								<StandardListItem icon="{MoviePicUrl}"/>
 								<ObjectIdentifier	title="{Name}"/>
 								<Text text="{Category}"/>
-								<tnt:InfoLabel
-									text="{Status}"
-									displayOnly="true"
-									colorScheme= "{parts: [{path: 'Status'}],
-										formatter: 'sap.ui.demo.walkthrough.service.Formatter.availableState'
-									}"/>
+								<Text text="{Genre}"/>
 								<Text text="{PubDate}"/>
 							</cells>
 						</ColumnListItem>
@@ -133,7 +128,7 @@
 	<footer>
 		<OverflowToolbar>
 			<ToolbarSpacer/>
-			<OverflowToolbarButton text="Add" icon="sap-icon://add"/>
+			<OverflowToolbarButton text="Add" icon="sap-icon://add" press="onAddMovie"/>
 		</OverflowToolbar>
 	</footer>
 	</Page>
