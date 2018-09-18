@@ -1,0 +1,41 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.ui.demo.walkthrough.controller.MovieDetail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:u="sap.ui.unified">
+
+	<u:Shell id="ngpShell" icon="{logoMdl>/logo}">
+		<u:headItems>
+			<u:ShellHeadItem tooltip="Home" icon="sap-icon://home"
+				press=".handlePressHome" />
+		</u:headItems>
+		<u:user>
+			<u:ShellHeadUserItem image="sap-icon://person-placeholder"
+				username="{/username}" press="handleUserItemPressed" />
+		</u:user>
+
+		<u:content>
+		<Page
+			id="page"
+			showHeader="true"
+			title="Movie Detail"
+			showNavButton="true"
+			navButtonPress="back"
+			enableScrolling="true" >
+			<footer>
+				<Bar>
+					<contentRight>
+						<Button id="book" text="Book" enabled="true" press="handleBookPress" />
+						<Button id="borrow" text="Borrow" enabled="true" press="handleBorrowPress" />
+						<Button id="edit" text="Edit" enabled="false" press="handleEditPress" />
+						<Button id="save" text="Save" type="Emphasized" visible="false" press="handleSavePress" />
+						<Button id="cancel" text="Cancel" visible="false" press="handleCancelPress" />
+						<Button id="delete" text="Delete" type="Reject" visible="false" press="handleDeletePress" />
+					</contentRight>
+				</Bar>
+			</footer>
+		</Page>
+	</u:content>
+	</u:Shell>
+</mvc:View>

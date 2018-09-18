@@ -1,0 +1,95 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="FormDisplayColumn_oneGroup"
+			editable="false">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="">
+							<Image
+								src="{Img}"
+								densityAware="false"
+								width="{/imageWidth}" >
+								<layoutData>
+									<FlexItemData growFactor="1" />
+								</layoutData>
+							</Image>
+						</f:FormElement>
+						<f:FormElement label="Name">
+							<f:fields>
+								<Text text="{Name}" id="nameText"  />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="ISBN">
+							<f:fields>
+								<Text text="{ISBN}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Ebook">
+							<f:fields>
+								<Link text="{Ebook}" press="downloadEbook"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Donor">
+							<f:fields>
+								<Text text="{Donor}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Category">
+							<f:fields>
+								<Text text="{Category}" id="countryText" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="PubDate">
+							<f:fields>
+								<Text text="{PubDate}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="PurchasingTime">
+							<f:fields>
+								<Text text="{PurchasingTime}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Description">
+							<f:fields>
+								<Text text="{Description}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Borrower">
+							<f:fields>
+								<Text text="{Borrower}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="BorrowerTime">
+							<f:fields>
+								<Text text="{BorrowerTime}" />
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+
+</core:FragmentDefinition>

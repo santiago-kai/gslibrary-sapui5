@@ -1,0 +1,19 @@
+{
+  "RoleCollection":[
+    {
+      "RoleId": "Role-01",
+      "Name": "Administrator",
+      "status": "Available"
+    },
+    {
+      "RoleId": "Role-02",
+      "Name": "Driver",
+      "status": "Available"
+    },
+    {
+      "RoleId": "Role-03",
+      "Name": "Member",
+      "status": "Available"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+    "_version":"1.8.0",
+    "sap.app":{
+        "id":"sap.ui.demo.walkthrough",
+        "type":"application",
+        "title":"2IG Center",
+        "description":"2IG Center",
+        "applicationVersion":{
+            "version":"1.0.0"
+        }
+    },
+    "sap.ui":{
+        "technology":"UI5",
+        "deviceTypes":{
+            "desktop":true,
+            "tablet":true,
+            "phone":true
+        }
+    },
+    "sap.ui5":{
+        "rootView":{
+            "viewName":"sap.ui.demo.walkthrough.view.App",
+            "type":"XML",
+            "async":true,
+            "id":"app"
+        },
+        "models": {
+    			"side": {
+    				"type": "sap.ui.model.json.JSONModel",
+    				"uri": "json/sideContent.json"
+    			},
+          "alerts": {
+    				"type": "sap.ui.model.json.JSONModel",
+    				"uri": "json/alerts.json"
+    			}
+    		},
+        "resources": {
+            "css": [
+              {
+                "uri": "css/Style.css"
+              }
+            ]
+        },
+        "dependencies":{
+            "minUI5Version":"1.30",
+            "libs":{
+
+            }
+        },
+        "routing":{
+            "config":{
+                "routerClass":"sap.m.routing.Router",
+                "viewType":"XML",
+                "viewPath":"sap.ui.demo.walkthrough.view",
+                "controlId":"app",
+                "controlAggregation":"pages",
+                "transition": "slide",
+                "async":true
+            },
+            "routes":[
+                {
+                    "pattern":"",
+                    "name":"Login",
+                    "target":"Login"
+                },
+                {
+                    "pattern":"Homepage",
+                    "name":"Homepage",
+                    "target": "Homepage"
+                },
+                {
+                    "pattern":"UsersManage",
+                    "name":"UsersManage",
+                    "target":"UsersManage"
+                },
+                {
+                    "pattern":"BooksReturn",
+                    "name":"BooksReturn",
+                    "target":"BooksReturn"
+                },
+                {
+                    "pattern":"BooksBook",
+                    "name":"BooksBook",
+                    "target":"BooksBook"
+                },
+                {
+                    "pattern":"BooksBrowse",
+                    "name":"BooksBrowse",
+                    "target":"BooksBrowse"
+                },
+                {
+                    "pattern":"BookDetail",
+                    "name":"BookDetail",
+                    "target":"BookDetail"
+                },
+                {
+                    "pattern":"BookAdd",
+                    "name":"BookAdd",
+                    "target":"BookAdd"
+                },
+                {
+                    "pattern":"MoviesBrowse",
+                    "name":"MoviesBrowse",
+                    "target":"MoviesBrowse"
+                },
+                {
+                    "pattern":"MovieDetail",
+                    "name":"MovieDetail",
+                    "target":"MovieDetail"
+                }
+            ],
+            "targets":{
+                "Login":{
+                    "viewID":"Login",
+                    "viewName":"Login"
+                },
+                "Homepage":{
+                    "viewID":"Homepage",
+                    "viewName":"Homepage"
+                },
+                "UsersManage":{
+                    "viewID":"UsersManage",
+                    "viewName":"UsersManage"
+                },
+                "BooksReturn":{
+                    "viewId":"BooksReturn",
+                    "viewName":"BooksReturn"
+                },
+                "BooksBook":{
+                    "viewId":"BooksBook",
+                    "viewName":"BooksBook"
+                },
+                "BooksBrowse":{
+                    "viewId":"BooksBrowse",
+                    "viewName":"BooksBrowse"
+                },
+                "BookDetail":{
+                    "viewId":"BookDetail",
+                    "viewName":"BookDetail"
+                },
+                "BookAdd":{
+                    "viewId":"BookAdd",
+                    "viewName":"BookAdd"
+                },
+                "MoviesBrowse":{
+                    "viewId":"MoviesBrowse",
+                    "viewName":"MoviesBrowse"
+                },
+                "MovieDetail":{
+                    "viewId":"MovieDetail",
+                    "viewName":"MovieDetail"
+                }
+            }
+        }
+    }
+}

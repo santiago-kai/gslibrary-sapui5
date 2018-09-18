@@ -1,0 +1,132 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="sap.ui.demo.walkthrough.controller.Homepage" >
+
+	<u:Shell id="ngpShell" icon="{logoMdl>/logo}">
+		<u:headItems>
+			<u:ShellHeadItem tooltip="Home" icon="sap-icon://home"
+				press=".handlePressHome" />
+		</u:headItems>
+		<u:user>
+			<u:ShellHeadUserItem image="sap-icon://person-placeholder"
+				username="{/username}" press="handleUserItemPressed" />
+		</u:user>
+
+		<Panel expandable="true" expanded="true" headerText="User Management" width="auto"
+			class="sapUiResponsiveMargin">
+			<GenericTile id="TileUserMgn" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+				header="User Management" press="userMgn">
+				<TileContent footer="Total: 88">
+					<ImageContent src="sap-icon://activity-individual" />
+				</TileContent>
+			</GenericTile>
+		</Panel>
+
+		<Panel expandable="true" expanded="true" headerText="Library" width="auto" class="sapUiResponsiveMargin">
+			<GenericTile id="TileReturnBooks" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+				header="Return Books"	subheader="Register your return" press="returnBooks">
+				<TileContent unit="" footer="Borrowed: 3">
+					<ImageContent src="sap-icon://bbyd-active-sales" />
+				</TileContent>
+			</GenericTile>
+			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Book Books"
+				subheader="Up to 2 books" press="bookBooks" visible="true">
+				<TileContent unit="" footer="Booked: 1">
+					<ImageContent src="sap-icon://learning-assistant" />
+				</TileContent>
+			</GenericTile>
+			<GenericTile id="TileBrowseBooks" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+				header="Browse/Borrow Books" subheader="Borrow Up to 5 books" press="browseBooks">
+				<TileContent>
+					<NumericContent scale="Up" value="237" valueColor="Error" indicator="Up" />
+				</TileContent>
+			</GenericTile>
+			<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+				<GenericTile  header="Latest update"
+					backgroundImage="res/1.jpg"
+					frameType="TwoByOne" state="Loaded" press="newBooks">
+					<TileContent unit="2018" footer="Author">
+						<NewsContent
+							contentText="Berlin"
+							subheader="Novel" />
+					</TileContent>
+				</GenericTile>
+				<GenericTile  header="Latest update"
+					backgroundImage="res/2.jpg"
+					frameType="TwoByOne" state="Loaded" press="newBooks">
+					<TileContent unit="2018" footer="Author">
+						<NewsContent
+							contentText="Tokyo"
+							subheader="Sci-fi" />
+					</TileContent>
+				</GenericTile>
+			</SlideTile>
+		</Panel>
+
+		<Panel expandable="true" expanded="true" headerText="Cinema" width="auto" class="sapUiResponsiveMargin">
+			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Browse Movies"
+				backgroundImage="res/filmposter.jpg"
+				subheader="All moives here" frameType="TwoByOne" press="browseMovies">
+				<TileContent unit="" footer="">
+					<FeedContent
+						contentText="Internal use ONLY !!!"
+						subheader="" value="768" />
+				</TileContent>
+			</GenericTile>
+			<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+				<GenericTile  header="Latest update"
+					backgroundImage="test-resources/sap/m/demokit/sample/GenericTileAsFeedTile/images/NewsImage1.png"
+					frameType="TwoByOne" state="Loaded" press="newMoives">
+					<TileContent unit="2018" footer="US">
+						<NewsContent
+							contentText="Berlin"
+							subheader="Novel" />
+					</TileContent>
+				</GenericTile>
+				<GenericTile  header="Latest update"
+					backgroundImage="test-resources/sap/m/demokit/sample/GenericTileAsFeedTile/images/NewsImage2.png"
+					frameType="TwoByOne" state="Loaded" press="newMoives">
+					<TileContent unit="2018" footer="CHN">
+						<NewsContent
+							contentText="Tokyo"
+							subheader="Sci-fi" />
+					</TileContent>
+				</GenericTile>
+			</SlideTile>
+		</Panel>
+
+		<Panel expandable="true" expanded="true" headerText="Photograph" width="auto" class="sapUiResponsiveMargin">
+			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Browse Photos"
+				subheader="All photos here" frameType="TwoByOne" press="browse_photos">
+				<TileContent unit="" footer="">
+					<FeedContent
+						contentText="Internal use ONLY !!!"
+						subheader="" value="345" />
+				</TileContent>
+			</GenericTile>
+			<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+				<GenericTile  header="Latest update"
+					backgroundImage="res/1.png"
+					frameType="TwoByOne" state="Loaded" press="new_photos">
+					<TileContent unit="2018" footer="SH">
+						<NewsContent
+							contentText="Outing"
+							subheader="" />
+					</TileContent>
+				</GenericTile>
+				<GenericTile  header="Latest update"
+					backgroundImage="res/2.png"
+					frameType="TwoByOne" state="Loaded" press="new_photos">
+					<TileContent unit="2018" footer="Labs">
+						<NewsContent
+							contentText="Games"
+							subheader="" />
+					</TileContent>
+				</GenericTile>
+			</SlideTile>
+		</Panel>
+
+	</u:Shell>
+</mvc:View>

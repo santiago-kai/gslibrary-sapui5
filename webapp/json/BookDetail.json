@@ -1,0 +1,19 @@
+{
+	"Book": [
+		{
+			"Id": "1",
+			"Name": "Thinking in Java",
+			"ISBN": "111222333",
+			"Img": "res/filmposter.jpg",
+			"Ebook": "http://www.sap.com",
+			"Donor": "GS",
+			"Category": "Technology",
+      "PubDate": "2017-10",
+			"PurchasingTime": "2017-10",
+			"Description": "This is a book about how to code in Java language",
+			"Borrower": "i326864",
+			"BorrowerTime": "2018-01",
+      "LastModified": "2018-01"
+		}
+	]
+}

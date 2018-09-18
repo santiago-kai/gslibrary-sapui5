@@ -1,0 +1,67 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.ui.demo.walkthrough.controller.BooksBook"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:u="sap.ui.unified">
+
+	<u:Shell id="ngpShell" icon="{logoMdl>/logo}">
+		<u:headItems>
+			<u:ShellHeadItem tooltip="Home" icon="sap-icon://home"
+				press=".handlePressHome" />
+		</u:headItems>
+		<u:user>
+			<u:ShellHeadUserItem image="sap-icon://person-placeholder"
+				username="{/username}" press="handleUserItemPressed" />
+		</u:user>
+
+		<u:content>
+		<Page
+			id="page"
+			showHeader="true"
+			title="Books Book"
+			showNavButton="true"
+			navButtonPress="back"
+			enableScrolling="true" >
+			<subHeader>
+						<Toolbar>
+							<SearchField
+								liveChange="onSearch"
+								width="100%" />
+						</Toolbar>
+					</subHeader>
+					<content>
+						<List
+							id="idList"
+							items="{/BooksCollection/BooksListCollection}"
+							selectionChange="onSelectionChange"
+							mode="MultiSelect"
+							includeItemInSelection="true" >
+							<infoToolbar>
+								<Toolbar
+									visible="false"
+									id="idInfoToolbar" >
+									<Label id="idFilterLabel" />
+								</Toolbar>
+							</infoToolbar>
+							<items>
+								<StandardListItem
+									title="{Name}"
+									description="{Category}"
+									icon="{BookPicUrl}"
+									iconDensityAware="false"
+									iconInset="false" />
+							</items>
+						</List>
+					</content>
+			<footer>
+				<Bar>
+					<contentRight>
+						<Button id="unbook" text="Unbook" type="Emphasized" enabled="false" press="handleUnbookPress" />
+					</contentRight>
+				</Bar>
+			</footer>
+		</Page>
+	</u:content>
+	</u:Shell>
+</mvc:View>

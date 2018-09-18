@@ -1,0 +1,142 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:vm="sap.ui.comp.variants"
+	xmlns:tnt="sap.tnt"
+	controllerName="sap.ui.demo.walkthrough.controller.MoviesBrowse" >
+
+	<u:Shell id="ngpShell" icon="{logoMdl>/logo}">
+		<u:headItems>
+			<u:ShellHeadItem tooltip="Home" icon="sap-icon://home"
+				press=".handlePressHome" />
+		</u:headItems>
+		<u:user>
+			<u:ShellHeadUserItem image="sap-icon://person-placeholder"
+				username="{/username}" press="handleUserItemPressed" />
+		</u:user>
+
+		<u:content>
+		<Page
+			title="Movies List"
+			showNavButton="true"
+			navButtonPress="back"
+			enableScrolling="false"
+			floatingFooter="true">
+		<content>
+		<f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}">
+			<!-- DynamicPage Header -->
+			<f:header>
+				<f:DynamicPageHeader pinnable="false">
+					<f:content>
+						<fb:FilterBar reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false">
+							<fb:filterItems>
+								<fb:FilterItem name="A" label="Status">
+									<fb:control>
+										<Select
+										id="slStatus"
+										forceSelection="true"
+										change="onSelectChange"
+										items="{path: '/BooksCollection/BookStatusCollection'}">
+										<core:Item key="{StatusId}" text="{Name}"/>
+										</Select>
+									</fb:control>
+								</fb:FilterItem>
+								<fb:FilterItem name="B" label="Category">
+									<fb:control>
+										<Select
+										id="slCategory"
+										change="onSelectChange"
+										forceSelection="true"
+										items="{path: '/BooksCollection/CategoryCollection'}">
+										<core:Item key="{CategoryId}" text="{Name}"/>
+										</Select>
+									</fb:control>
+								</fb:FilterItem>
+								<fb:FilterItem name="C" label="Search">
+									<fb:control>
+										<Toolbar>
+											<SearchField
+												id="sfsearchField"
+												liveChange="onSearch"/>
+										</Toolbar>
+									</fb:control>
+								</fb:FilterItem>
+							</fb:filterItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+
+			<!-- DynamicPage Content -->
+			<f:content>
+				<Table
+						id="idMoviesTable"
+						inset="false"
+						items="{path: '/BooksCollection/BooksListCollection'}">
+
+					<columns>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text=""/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Name"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Category"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Status"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Publication Date"/>
+						</Column>
+					</columns>
+
+					<items>
+						<ColumnListItem
+								id="idListItem"
+								press="onMovieDetail"
+								type="Navigation"
+								vAlign="Middle">
+							<cells>
+								<StandardListItem icon="{BookPicUrl}"/>
+								<ObjectIdentifier	title="{Name}"/>
+								<Text text="{Category}"/>
+								<tnt:InfoLabel
+									text="{Status}"
+									displayOnly="true"
+									colorScheme= "{parts: [{path: 'Status'}],
+										formatter: 'sap.ui.demo.walkthrough.service.Formatter.availableState'
+									}"/>
+								<Text text="{PubDate}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</f:content>
+		</f:DynamicPage>
+	</content>
+	<footer>
+		<OverflowToolbar>
+			<ToolbarSpacer/>
+			<OverflowToolbarButton text="Add" icon="sap-icon://add"/>
+		</OverflowToolbar>
+	</footer>
+	</Page>
+	</u:content>
+	</u:Shell>
+</mvc:View>

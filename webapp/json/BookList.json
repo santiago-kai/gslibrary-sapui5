@@ -1,0 +1,54 @@
+{
+  "BooksCollection":{
+    "BooksListCollection":[
+      {
+        "BookId": "1",
+        "BookPicUrl": "res/filmposter.jpg",
+        "Name": "The Alchemist",
+        "Category": "Novel",
+        "Status": "Available",
+        "PubDate": "2016-10"
+      },
+      {
+        "BookId": "2",
+        "BookPicUrl": "res/filmposter.jpg",
+        "Name": "Thinking in Java",
+        "Category": "Technology",
+        "Status": "Borrowed out",
+        "PubDate": "2017-10"
+      }
+    ],
+    "BookStatusCollection":[
+      {
+        "StatusId": "",
+        "Name": "ALL"
+      },
+      {
+        "StatusId": "Available",
+        "Name": "Available"
+      },
+      {
+        "StatusId": "Borrowed out",
+        "Name": "Borrowed out"
+      }
+    ],
+    "CategoryCollection":[
+      {
+        "CategoryId": "",
+        "Name": "ALL"
+      },
+      {
+        "CategoryId": "Novel",
+        "Name": "Novel"
+      },
+      {
+        "CategoryId": "Technology",
+        "Name": "Technology"
+      }
+    ],
+    "Filter" : {
+      "text": "Filtered by: nothing"
+    }
+  }
+
+}

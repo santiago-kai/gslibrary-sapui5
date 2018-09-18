@@ -1,0 +1,37 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.ui.demo.walkthrough.controller.BookAdd"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:u="sap.ui.unified">
+
+	<u:Shell id="ngpShell" icon="{logoMdl>/logo}">
+		<u:headItems>
+			<u:ShellHeadItem tooltip="Home" icon="sap-icon://home"
+				press=".handlePressHome" />
+		</u:headItems>
+		<u:user>
+			<u:ShellHeadUserItem image="sap-icon://person-placeholder"
+				username="{/username}" press="handleUserItemPressed" />
+		</u:user>
+
+		<u:content>
+		<Page
+			id="page"
+			showHeader="true"
+			title="Add a new Book"
+			showNavButton="true"
+			navButtonPress="back"
+			enableScrolling="true" >
+			<footer>
+				<Bar>
+					<contentRight>
+						<Button id="save" text="Save" type="Emphasized" visible="false" press="handleSavePress" />
+						<Button id="cancel" text="Cancel" visible="false" press="handleCancelPress" />
+					</contentRight>
+				</Bar>
+			</footer>
+		</Page>
+	</u:content>
+	</u:Shell>
+</mvc:View>

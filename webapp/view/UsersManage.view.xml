@@ -1,0 +1,70 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.ui.demo.walkthrough.controller.UsersManage"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:u="sap.ui.unified">
+
+	<u:Shell id="ngpShell" icon="{logoMdl>/logo}">
+		<u:headItems>
+			<u:ShellHeadItem tooltip="Home" icon="sap-icon://home"
+				press=".handlePressHome" />
+		</u:headItems>
+		<u:user>
+			<u:ShellHeadUserItem image="sap-icon://person-placeholder"
+				username="{/username}" press="handleUserItemPressed" />
+		</u:user>
+
+		<u:content>
+		<Page
+			id="page"
+			showHeader="true"
+			title="User Management"
+			showNavButton="true"
+			navButtonPress="back"
+			enableScrolling="true" >
+			<subHeader>
+						<Toolbar>
+							<SearchField
+								liveChange="onSearch"
+								width="100%" />
+						</Toolbar>
+					</subHeader>
+					<content>
+						<List
+							id="idList"
+							items="{/UsersListCollection}"
+							selectionChange="onSelectionChange"
+							mode="MultiSelect"
+							includeItemInSelection="true" >
+							<infoToolbar>
+								<Toolbar
+									visible="false"
+									id="idInfoToolbar" >
+									<Label id="idFilterLabel" />
+								</Toolbar>
+							</infoToolbar>
+							<items>
+								<StandardListItem
+									title="{Name}"
+									description="{UserId}"
+									icon="{BookPicUrl}"
+									info="{Email}"
+									iconDensityAware="false"
+									iconInset="false" />
+							</items>
+						</List>
+					</content>
+			<footer>
+				<Bar>
+					<contentRight>
+						<Button id="add" text="Add" type="Accept" enabled="true" press="handleAddPress" />
+						<Button id="edit" text="Edit" type="Emphasized" enabled="false" press="handleEditPress" />
+						<Button id="delete" text="Delete" type="Reject" enabled="false" press="handleDeletePress" />
+					</contentRight>
+				</Bar>
+			</footer>
+		</Page>
+	</u:content>
+	</u:Shell>
+</mvc:View>

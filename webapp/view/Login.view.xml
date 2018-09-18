@@ -1,0 +1,77 @@
+<core:View
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	controllerName="sap.ui.demo.walkthrough.controller.Login" >
+
+	<u:Shell id="ngpShell" icon="{logoMdl>/logo}">
+
+		<u:content>
+			<VBox height="80%" alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+				<f:Form id="FormChange354"
+					editable="false">
+					<f:title>
+						<core:Title text="2IG Center" />
+					</f:title>
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="4"
+							emptySpanL="4"
+							emptySpanM="4"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Username">
+									<f:fields>
+										<Input
+											id="username"
+											type="Text"
+											placeholder="Username" >
+										</Input>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Password">
+									<f:fields>
+										<Input
+											id="password"
+											type="Password"
+											placeholder="Password" >
+										</Input>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Role">
+									<f:fields>
+										<Select
+											forceSelection="false"
+											selectedKey="{/RoleCollection/RoleId}"
+											items="{
+												path: '/RoleCollection',
+												sorter: { path: 'RoleId' }
+											}">
+											<core:Item key="{RoleId}" text="{Name}" />
+										</Select>
+									</f:fields>
+								 <Button text="Log On" press="submit" />
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+
+	  </u:content>
+	</u:Shell>
+</core:View>

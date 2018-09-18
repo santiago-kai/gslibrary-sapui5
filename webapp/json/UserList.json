@@ -1,0 +1,23 @@
+{
+  "UsersListCollection":[
+    {
+      "Id": "1",
+      "UserId": "I326864",
+      "Name": "Santiago",
+      "Email": "santiago.zhang@sap.com",
+      "Role": "",
+      "BorrowBooksCount": "1",
+      "LastModified": "2017-10"
+    },
+    {
+      "Id": "1",
+      "UserId": "C123456",
+      "Name": "Veronica",
+      "Email": "veronica.zhang@sap.com",
+      "Role": "",
+      "BorrowBooksCount": "2",
+      "LastModified": "2016-10"
+    }
+  ]
+
+}
